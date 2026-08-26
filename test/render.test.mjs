@@ -24,17 +24,23 @@ test('inlineAssets leaves html untouched when there are no assets', () => {
 });
 
 test('renderSlide produces a PNG (needs Playwright Chromium)', async (t) => {
+  // In CI the browser is installed on purpose, so a missing/unlaunchable
+  // Chromium is a real failure — never let it silently skip. Locally (no CI
+  // env) the test still skips so the suite runs without a browser.
+  const strict = !!process.env.CI;
   let chromium;
   try {
     ({ chromium } = await import('playwright'));
-  } catch {
+  } catch (err) {
+    if (strict) throw err;
     t.skip('playwright not installed');
     return;
   }
   let browser;
   try {
     browser = await chromium.launch({ args: ['--no-sandbox'] });
-  } catch {
+  } catch (err) {
+    if (strict) throw err;
     t.skip('chromium browser not available');
     return;
   }
