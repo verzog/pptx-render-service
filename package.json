@@ -1,0 +1,19 @@
+{
+  "name": "pptx-render-service",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "description": "Proprietary render backend for the PowerPoint import plugins: rasterises reconstructed slide HTML to page images with headless Chromium.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "fastify": "^4.28.1",
+    "playwright": "^1.47.2"
+  }
+}
