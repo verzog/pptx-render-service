@@ -2,7 +2,7 @@
 
 Proprietary render backend for the PowerPoint import plugins
 ([booktool_importpptx](https://github.com/verzog/moodle-booktool_importpptx) /
-[local_lessonimportpptx](https://github.com/verzog/moodle-lessontool_importpptx)).
+[local_lessonimportpptx](https://github.com/verzog/moodle-local_lessonimportpptx)).
 
 It rasterises **reconstructed slide HTML** to page images with headless
 Chromium. The plugin parses the uploaded `.pptx` in memory-safe PHP and produces
